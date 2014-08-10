@@ -1,0 +1,106 @@
+body{
+	padding:0px;
+	margin:0px;
+}
+/*--------------------垂直导航--------------*/
+/*把导航栏的效果封装好,直接在div中定义class，然后class="gs-menu"*/
+.gs-menu{
+
+	font-family:"proxima-nova", sans-serif;
+}
+.gs-menu>ul{
+	/*去除表格样式*/
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+.gs-menu>ul>li>a,.gs-menu-heading{
+	/*超链接，内容选项，把文本处理，再变成block*/
+	text-decoration:none;
+	text-align:center;
+	/*变成block*/
+	display:block;
+	padding:5px 20px;
+	margin:0px;
+	margin-top:1px;
+	/*设置block宽度,不设置就会占满宽度,高度不用设置*/
+	
+	/*设置文字，背景，边框*/
+	color:#66cc99;
+	background-color:#ffffff;
+
+	/*css3圆角特性*/
+	border-radius:8px;
+
+
+}
+.gs-menu>ul>li>a:hover{
+	background-color:#66cc99;
+	color:#FFFFFF!important;
+
+	/*css3阴影特性*/
+	box-shadow: 1px 1px 3px #888888;
+}
+.gs-menu-selected>a{
+	/*选中的选项卡的颜色会不一样，需要在li中定义class="gs-menu-selected"*/
+	border-bottom:2px solid #66cc99 !important;
+	border-radius:0px!important;
+}
+/*--------------------水平导航----------------*/
+/*水平导航名字为gs-menu-horizontal，只要定义这样class就可以了,使用这个前要先使用.gs-menu */
+.gs-menu-horizontal ul li,.gs-menu-heading{
+	float:left;
+	width:110px;
+	margin-left:2px;
+}
+/*水平导航带标题,要在横向gs-menu-horizontal的基础上才能用这个*/
+.gs-menu-heading{
+	/*由于这个已经继承了gs-menu的a样式设计，把文字,宽度样式改一下就可以了*/
+	width:100px;
+
+}
+
+
+/*--------------------水平导航分离器，就是多个选项卡----------------*/
+/*定义class="gs-menu-separator使用"*/
+.gs-menu-separator{
+	/*去掉默认样式*/
+	list-style:none;
+	padding:0px;
+	margin:0px;
+
+}
+.gs-menu-separator>li>a {
+	
+	/*超链接，内容选项，把文本处理，再变成block*/
+	text-decoration:none;
+	text-align:center;
+	font-size:12px;
+	/*变成block*/
+	display:block;
+	padding:5px 20px;
+	margin:0px;
+	margin-top:1px;
+	/*设置block宽度,不设置就会占满宽度,高度不用设置*/
+	
+	/*设置文字，背景，边框*/
+	color:#66cc99;
+	background-color:#ffffff;
+
+}
+.gs-menu-separator{
+	display:none;
+}
+
+.gs-menu-separator>li>a:hover{
+	
+	border-bottom:2px solid #66cc99;
+
+	/*css3阴影特性*/
+	box-shadow: 1px 1px 2px #888888;
+}
+
+.gs-menu>ul>li:hover>ul{
+	display:block;
+}
